@@ -26,7 +26,7 @@ If you manage proto files in a git repository, what will you do? Most remote ser
 ### go install
 
 ```bash
-$ go install -v github.com/hr3685930/protodep
+$ go install github.com/hr3685930/protodep
 ```
 
 ## Usage
