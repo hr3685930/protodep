@@ -8,9 +8,9 @@ import (
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing"
 
-	"github.com/stormcat24/protodep/pkg/auth"
-	"github.com/stormcat24/protodep/pkg/config"
-	"github.com/stormcat24/protodep/pkg/logger"
+	"github.com/hr3685930/protodep/pkg/auth"
+	"github.com/hr3685930/protodep/pkg/config"
+	"github.com/hr3685930/protodep/pkg/logger"
 )
 
 type Git interface {

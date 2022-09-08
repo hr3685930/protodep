@@ -1,4 +1,4 @@
-module github.com/stormcat24/protodep
+module github.com/hr3685930/protodep
 
 go 1.18
 

@@ -11,8 +11,8 @@ import (
 	"github.com/mitchellh/go-homedir"
 	"github.com/stretchr/testify/require"
 
-	"github.com/stormcat24/protodep/pkg/auth"
-	"github.com/stormcat24/protodep/pkg/config"
+	"github.com/hr3685930/protodep/pkg/auth"
+	"github.com/hr3685930/protodep/pkg/config"
 )
 
 func TestSync(t *testing.T) {

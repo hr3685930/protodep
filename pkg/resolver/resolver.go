@@ -9,10 +9,10 @@ import (
 
 	"github.com/BurntSushi/toml"
 	"github.com/gobwas/glob"
-	"github.com/stormcat24/protodep/pkg/auth"
-	"github.com/stormcat24/protodep/pkg/config"
-	"github.com/stormcat24/protodep/pkg/logger"
-	"github.com/stormcat24/protodep/pkg/repository"
+	"github.com/hr3685930/protodep/pkg/auth"
+	"github.com/hr3685930/protodep/pkg/config"
+	"github.com/hr3685930/protodep/pkg/logger"
+	"github.com/hr3685930/protodep/pkg/repository"
 )
 
 type protoResource struct {
@@ -75,11 +75,13 @@ func (s *resolver) Resolve(forceUpdate bool, cleanupCache bool) error {
 	}
 
 	outdir := filepath.Join(s.conf.OutputDir, protodep.ProtoOutdir)
-	if err := os.RemoveAll(outdir); err != nil {
-		return err
-	}
 
 	for _, dep := range protodep.Dependencies {
+		pathOutdir := filepath.Join(s.conf.OutputDir, protodep.ProtoOutdir, dep.Path)
+		if err := os.RemoveAll(pathOutdir); err != nil {
+			return err
+		}
+
 		var authProvider auth.AuthProvider
 
 		if s.conf.UseHttps {
@@ -131,7 +133,6 @@ func (s *resolver) Resolve(forceUpdate bool, cleanupCache bool) error {
 			}
 			return nil
 		})
-
 		for _, s := range sources {
 			outpath := filepath.Join(outdir, dep.Path, s.relativeDest)
 
